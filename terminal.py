@@ -100,14 +100,21 @@
 
 # Готовый скрипт для запуска PostgreSQL, данные в параметрах меняются в зависимости от требуемых настроек (логин, пароль, названия базы и т.д.:
 # docker run -d \
-#   --name PostgreSQL \
+#   --name postgres \
 #   -e POSTGRES_PASSWORD=0502 \
 #   -e POSTGRES_USER=gsa \
 #   -e POSTGRES_DB=PostgreSQL \
 #   -p 8080:5432 \
-#   -v "./SQLAlchemy/postgres_db/storage":/var/lib/postgresql/data \
+#   -v "./storage":/var/lib/postgresql/data \
 #   postgres:16.4
 
+
+# Готовый скрипт для запуска Redis, данные в параметрах меняются в зависимости от требуемых настроек (пароль, порт и т.д.:
+# docker run -d \
+#  --name e-commerce-redis \
+#  -e REDIS_PASSWORD=0502 \
+#  -p 1010:6379 \
+#  redis:7 redis-server --requirepass 0502
 
 # Автоматическое удаление остановленных контейнеров
 # TODO '--rm' - Этот флаг указывается при запуске контейнера и говорит docker чтобы тот удалил этот контейнер тогда, когда он будет остановлен
